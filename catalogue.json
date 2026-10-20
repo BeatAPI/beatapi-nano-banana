@@ -1,0 +1,815 @@
+[
+  {
+    "reference": "model:nano-banana-2",
+    "kind": "model",
+    "id": "nano-banana-2",
+    "version": "1",
+    "status": "available",
+    "readiness": "ready",
+    "title": "Nano Banana 2",
+    "description": "Nano Banana 2 generation capability",
+    "categories": [
+      "image"
+    ],
+    "tags": [
+      "image",
+      "generate"
+    ],
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "1:1",
+            "1:4",
+            "1:8",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "8:1",
+            "9:16",
+            "16:9",
+            "21:9",
+            "auto"
+          ],
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "maxItems": 14,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "nano-banana-2"
+          ],
+          "type": "string"
+        },
+        "output_format": {
+          "default": "png",
+          "enum": [
+            "png",
+            "jpeg"
+          ],
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "default": "1K",
+          "enum": [
+            "1K",
+            "2K",
+            "4K"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "output_schema": {
+      "delivery": "hosted_url",
+      "properties": {
+        "media": {
+          "description": "The hosted result assets, in output order.",
+          "items": {
+            "properties": {
+              "mime_type": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "image"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "mime_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "r2_url": {
+          "deprecated": true,
+          "description": "Deprecated: read media[0].url. The primary asset's URL again — the video, else the first image, the same value as that media[].url — kept only for clients that read one URL.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "schema_hash": "e06cff9f5e2a75e5",
+    "execution": {
+      "mode": "async",
+      "status_supported": true,
+      "result_location": "task",
+      "executable": true,
+      "recommended": true
+    },
+    "pricing": {
+      "unit": "image",
+      "price_usd": "0.02",
+      "tiers": [
+        {
+          "id": "nano-banana-2-1k",
+          "spec": "1 image · 1K",
+          "price_usd": "0.02"
+        },
+        {
+          "id": "nano-banana-2-2k",
+          "spec": "1 image · 2K",
+          "price_usd": "0.04"
+        },
+        {
+          "id": "nano-banana-2-4k",
+          "spec": "1 image · 4K",
+          "price_usd": "0.06"
+        }
+      ]
+    },
+    "versions": {
+      "catalog_version": "",
+      "contract_version": "1"
+    },
+    "validation": {
+      "state": "contract_tested",
+      "verified_at": "2026-09-14T00:00:00Z",
+      "evidence": [
+        "executable generation model contract"
+      ]
+    },
+    "price_key": "nano-banana-2"
+  },
+  {
+    "reference": "model:nano-banana-2-lite",
+    "kind": "model",
+    "id": "nano-banana-2-lite",
+    "version": "1",
+    "status": "available",
+    "readiness": "ready",
+    "title": "Nano Banana 2 Lite",
+    "description": "Nano Banana 2 Lite generation capability",
+    "categories": [
+      "image"
+    ],
+    "tags": [
+      "image",
+      "generate"
+    ],
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "1:1",
+            "1:4",
+            "1:8",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "8:1",
+            "9:16",
+            "16:9",
+            "21:9",
+            "auto"
+          ],
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "maxItems": 14,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "nano-banana-2-lite"
+          ],
+          "type": "string"
+        },
+        "output_format": {
+          "default": "png",
+          "enum": [
+            "png",
+            "jpeg"
+          ],
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "default": "1K",
+          "enum": [
+            "1K"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "output_schema": {
+      "delivery": "hosted_url",
+      "properties": {
+        "media": {
+          "description": "The hosted result assets, in output order.",
+          "items": {
+            "properties": {
+              "mime_type": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "image"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "mime_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "r2_url": {
+          "deprecated": true,
+          "description": "Deprecated: read media[0].url. The primary asset's URL again — the video, else the first image, the same value as that media[].url — kept only for clients that read one URL.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "schema_hash": "061fabf5bc310955",
+    "execution": {
+      "mode": "async",
+      "status_supported": true,
+      "result_location": "task",
+      "executable": true,
+      "recommended": true
+    },
+    "pricing": {
+      "unit": "image",
+      "price_usd": "0.02",
+      "tiers": [
+        {
+          "id": "nano-banana-2-lite-1k",
+          "spec": "1 image · 1K",
+          "price_usd": "0.02"
+        }
+      ]
+    },
+    "versions": {
+      "catalog_version": "",
+      "contract_version": "1"
+    },
+    "validation": {
+      "state": "contract_tested",
+      "verified_at": "2026-09-14T00:00:00Z",
+      "evidence": [
+        "executable generation model contract"
+      ]
+    },
+    "price_key": "nano-banana-2-lite"
+  },
+  {
+    "reference": "model:nano-banana-2.1",
+    "kind": "model",
+    "id": "nano-banana-2.1",
+    "version": "1",
+    "status": "available",
+    "readiness": "ready",
+    "title": "Nano Banana 2.1",
+    "description": "Nano Banana 2.1 generation capability",
+    "categories": [
+      "image"
+    ],
+    "tags": [
+      "image",
+      "generate"
+    ],
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "1:1",
+            "1:4",
+            "1:8",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "8:1",
+            "9:16",
+            "16:9",
+            "21:9",
+            "auto"
+          ],
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "maxItems": 14,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "nano-banana-2.1"
+          ],
+          "type": "string"
+        },
+        "output_format": {
+          "default": "png",
+          "enum": [
+            "png",
+            "jpeg"
+          ],
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "default": "1K",
+          "enum": [
+            "1K",
+            "2K",
+            "4K"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "output_schema": {
+      "delivery": "hosted_url",
+      "properties": {
+        "media": {
+          "description": "The hosted result assets, in output order.",
+          "items": {
+            "properties": {
+              "mime_type": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "image"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "mime_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "r2_url": {
+          "deprecated": true,
+          "description": "Deprecated: read media[0].url. The primary asset's URL again — the video, else the first image, the same value as that media[].url — kept only for clients that read one URL.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "schema_hash": "a28b9ce7d7628400",
+    "execution": {
+      "mode": "async",
+      "status_supported": true,
+      "result_location": "task",
+      "executable": true,
+      "recommended": true
+    },
+    "pricing": {
+      "unit": "image",
+      "price_usd": "0.02",
+      "tiers": [
+        {
+          "id": "nano-banana-2.1-1k",
+          "spec": "1 image · 1K",
+          "price_usd": "0.02"
+        },
+        {
+          "id": "nano-banana-2.1-2k",
+          "spec": "1 image · 2K",
+          "price_usd": "0.04"
+        },
+        {
+          "id": "nano-banana-2.1-4k",
+          "spec": "1 image · 4K",
+          "price_usd": "0.06"
+        }
+      ]
+    },
+    "versions": {
+      "catalog_version": "",
+      "contract_version": "1"
+    },
+    "validation": {
+      "state": "contract_tested",
+      "verified_at": "2026-09-14T00:00:00Z",
+      "evidence": [
+        "executable generation model contract"
+      ]
+    },
+    "price_key": "nano-banana-2.1"
+  },
+  {
+    "reference": "model:nano-banana",
+    "kind": "model",
+    "id": "nano-banana",
+    "version": "1",
+    "status": "available",
+    "readiness": "ready",
+    "title": "Nano Banana",
+    "description": "Nano Banana generation capability",
+    "categories": [
+      "image"
+    ],
+    "tags": [
+      "image",
+      "generate"
+    ],
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "1:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "21:9",
+            "auto"
+          ],
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "nano-banana"
+          ],
+          "type": "string"
+        },
+        "output_format": {
+          "default": "png",
+          "enum": [
+            "png",
+            "jpeg"
+          ],
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "default": "1K",
+          "enum": [
+            "1K"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "output_schema": {
+      "delivery": "hosted_url",
+      "properties": {
+        "media": {
+          "description": "The hosted result assets, in output order.",
+          "items": {
+            "properties": {
+              "mime_type": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "image"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "mime_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "r2_url": {
+          "deprecated": true,
+          "description": "Deprecated: read media[0].url. The primary asset's URL again — the video, else the first image, the same value as that media[].url — kept only for clients that read one URL.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "schema_hash": "06beb09a6e9c76b5",
+    "execution": {
+      "mode": "async",
+      "status_supported": true,
+      "result_location": "task",
+      "executable": true,
+      "recommended": true
+    },
+    "pricing": {
+      "unit": "image",
+      "price_usd": "0.03",
+      "tiers": [
+        {
+          "id": "nano-banana-1k",
+          "spec": "1 image · 1K",
+          "price_usd": "0.03"
+        }
+      ]
+    },
+    "versions": {
+      "catalog_version": "",
+      "contract_version": "1"
+    },
+    "validation": {
+      "state": "contract_tested",
+      "verified_at": "2026-09-14T00:00:00Z",
+      "evidence": [
+        "executable generation model contract"
+      ]
+    },
+    "price_key": "nano-banana"
+  },
+  {
+    "reference": "model:nano-banana-pro",
+    "kind": "model",
+    "id": "nano-banana-pro",
+    "version": "1",
+    "status": "available",
+    "readiness": "ready",
+    "title": "Nano Banana Pro",
+    "description": "Nano Banana Pro generation capability",
+    "categories": [
+      "image"
+    ],
+    "tags": [
+      "image",
+      "generate"
+    ],
+    "input_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "default": "1:1",
+          "enum": [
+            "1:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "21:9",
+            "auto"
+          ],
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "maxItems": 14,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "enum": [
+            "nano-banana-pro"
+          ],
+          "type": "string"
+        },
+        "output_format": {
+          "default": "png",
+          "enum": [
+            "png",
+            "jpg"
+          ],
+          "type": "string"
+        },
+        "prompt": {
+          "maxLength": 5000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "resolution": {
+          "default": "1K",
+          "enum": [
+            "1K",
+            "2K",
+            "4K"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "prompt"
+      ],
+      "type": "object"
+    },
+    "output_schema": {
+      "delivery": "hosted_url",
+      "properties": {
+        "media": {
+          "description": "The hosted result assets, in output order.",
+          "items": {
+            "properties": {
+              "mime_type": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "image"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "format": "uri",
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "url",
+              "mime_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "r2_url": {
+          "deprecated": true,
+          "description": "Deprecated: read media[0].url. The primary asset's URL again — the video, else the first image, the same value as that media[].url — kept only for clients that read one URL.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "media"
+      ],
+      "type": "object"
+    },
+    "schema_hash": "8002fdfef2b8f78c",
+    "execution": {
+      "mode": "async",
+      "status_supported": true,
+      "result_location": "task",
+      "executable": true,
+      "recommended": true
+    },
+    "pricing": {
+      "unit": "image",
+      "price_usd": "0.05",
+      "tiers": [
+        {
+          "id": "nano-banana-pro-1k",
+          "spec": "1 image · 1K",
+          "price_usd": "0.05"
+        },
+        {
+          "id": "nano-banana-pro-2k",
+          "spec": "1 image · 2K",
+          "price_usd": "0.05"
+        },
+        {
+          "id": "nano-banana-pro-4k",
+          "spec": "1 image · 4K",
+          "price_usd": "0.1"
+        }
+      ]
+    },
+    "versions": {
+      "catalog_version": "",
+      "contract_version": "1"
+    },
+    "validation": {
+      "state": "contract_tested",
+      "verified_at": "2026-09-14T00:00:00Z",
+      "evidence": [
+        "executable generation model contract"
+      ]
+    },
+    "price_key": "nano-banana-pro"
+  }
+]

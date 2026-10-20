@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "beatapi-nano-banana",
+  "version": "0.1.0",
+  "description": "Generate images and edit reference photos at affordable prices with the Nano Banana family. From $0.02 per 1K image. Connect your own BeatAPI key and confirm the price before generating.",
+  "author": {
+    "name": "BeatAPI",
+    "email": "support@beatapi.io",
+    "url": "https://beatapi.io"
+  },
+  "homepage": "https://beatapi.io/pricing",
+  "license": "MIT",
+  "keywords": [
+    "beatapi",
+    "grok-bot",
+    "nano-banana",
+    "image"
+  ],
+  "repository": "https://github.com/BeatAPI/beatapi-nano-banana"
+}
