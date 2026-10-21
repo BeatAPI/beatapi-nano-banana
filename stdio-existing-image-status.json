@@ -1,0 +1,9 @@
+[
+  {
+    "model": "nano-banana-2-lite",
+    "existing_task_status": "succeeded",
+    "returned_image_matches_verified_result": true,
+    "credits_settled": 0.02,
+    "new_paid_starts": 0
+  }
+]
